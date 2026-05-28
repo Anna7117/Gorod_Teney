@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://bxedc86bhdtkc"]
+
+[ext_resource type="Script" uid="uid://0cl4433d6yso" path="res://Дверь выхода/door.gd" id="1_q8dsm"]
+[ext_resource type="Texture2D" uid="uid://bt45ua617i7by" path="res://Дверь выхода/fsmdoor_soruve (1).png" id="2_rdfsg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8e7c"]
+atlas = ExtResource("2_rdfsg")
+region = Rect2(0, 271, 105, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bp2q"]
+atlas = ExtResource("2_rdfsg")
+region = Rect2(0, 192, 105, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ia3ga"]
+atlas = ExtResource("2_rdfsg")
+region = Rect2(0, 34, 105, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3okx"]
+atlas = ExtResource("2_rdfsg")
+region = Rect2(0, 34, 105, 79)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrhfb"]
+atlas = ExtResource("2_rdfsg")
+region = Rect2(0, 271, 105, 79)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p3d7m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8e7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bp2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ia3ga")
+}],
+"loop": false,
+"name": &"close_door",
+"speed": 13.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3okx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bp2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrhfb")
+}],
+"loop": false,
+"name": &"open_door",
+"speed": 13.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bvedu"]
+radius = 51.009804
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8e7c"]
+size = Vector2(28, 39)
+
+[node name="Дверь" type="Node2D" unique_id=2070650682]
+script = ExtResource("1_q8dsm")
+next_scene = "res://Уровни/уровень_2.tscn"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=748892474]
+position = Vector2(-8.999996, -3.000001)
+scale = Vector2(0.6666667, 0.6666667)
+sprite_frames = SubResource("SpriteFrames_p3d7m")
+animation = &"open_door"
+
+[node name="Анимация двери" type="Area2D" parent="." unique_id=1417202866]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Анимация двери" unique_id=1434667229]
+shape = SubResource("CircleShape2D_bvedu")
+
+[node name="Переход на новый уровень" type="Area2D" parent="." unique_id=1356368928]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Переход на новый уровень" unique_id=1325469230]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_h8e7c")
+
+[connection signal="body_entered" from="Анимация двери" to="." method="_on_анимация_двери_body_entered"]
+[connection signal="body_exited" from="Анимация двери" to="." method="_on_анимация_двери_body_exited"]
+[connection signal="body_entered" from="Переход на новый уровень" to="." method="_on_переход_на_новый_уровень_body_entered"]

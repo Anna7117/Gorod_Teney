@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bcid61g603k03"]
+
+[ext_resource type="Script" uid="uid://dumq6w4f84k1s" path="res://Ловушки/spike.gd" id="1_yydum"]
+[ext_resource type="Texture2D" uid="uid://4nyepq2ycv5x" path="res://Ловушки/шипы.png" id="2_6dl4x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pp4l"]
+size = Vector2(25, 14)
+
+[node name="Шипы" type="Node2D" unique_id=291851832]
+script = ExtResource("1_yydum")
+
+[node name="шипы" type="Sprite2D" parent="." unique_id=579753051]
+position = Vector2(1, -7)
+scale = Vector2(0.069536425, 0.06953642)
+texture = ExtResource("2_6dl4x")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1658479280]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1754529647]
+position = Vector2(0.5, -7)
+shape = SubResource("RectangleShape2D_5pp4l")
+
+[node name="Timer" type="Timer" parent="." unique_id=807064574]
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

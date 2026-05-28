@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bnpl2668w3ogg"]
+
+[ext_resource type="Texture2D" uid="uid://c8vdom33ogf4j" path="res://Money/Gold_21.png" id="1_3qej1"]
+[ext_resource type="Script" uid="uid://dfqm67cw600ky" path="res://Money/gold.gd" id="1_b8bjl"]
+[ext_resource type="Texture2D" uid="uid://c57tc8mv53u07" path="res://Money/Gold_22.png" id="2_b8bjl"]
+[ext_resource type="Texture2D" uid="uid://3krh7y803sq4" path="res://Money/Gold_23.png" id="3_rk1j5"]
+[ext_resource type="Texture2D" uid="uid://d3ltvq6gkgila" path="res://Money/Gold_24.png" id="4_0ax62"]
+[ext_resource type="Texture2D" uid="uid://3h43i20v8inj" path="res://Money/Gold_25.png" id="5_kfsgq"]
+[ext_resource type="Texture2D" uid="uid://pt6jv1dtrqd7" path="res://Money/Gold_26.png" id="6_serot"]
+[ext_resource type="Texture2D" uid="uid://7i7xrbpyfjb7" path="res://Money/Gold_27.png" id="7_o8b6v"]
+[ext_resource type="Texture2D" uid="uid://cb1ffnqerjvte" path="res://Money/Gold_28.png" id="8_2brpk"]
+[ext_resource type="Texture2D" uid="uid://d2m4tedp5s7mt" path="res://Money/Gold_29.png" id="9_xqudy"]
+[ext_resource type="Texture2D" uid="uid://bidn653r52nim" path="res://Money/Gold_30.png" id="10_tpqnq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p88id"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy16v"]
+atlas = ExtResource("1_3qej1")
+region = Rect2(0, 0, 563, 564)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gpev1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy16v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_b8bjl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rk1j5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0ax62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kfsgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_serot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_o8b6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2brpk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xqudy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_tpqnq")
+}],
+"loop": true,
+"name": &"Moneyanim",
+"speed": 15.0
+}]
+
+[node name="Gold" type="Area2D" unique_id=923244415]
+script = ExtResource("1_b8bjl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1571105937]
+shape = SubResource("CircleShape2D_p88id")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2143140900]
+position = Vector2(0, 5.9604645e-08)
+scale = Vector2(0.020308336, 0.02030834)
+sprite_frames = SubResource("SpriteFrames_gpev1")
+animation = &"Moneyanim"
+autoplay = "Moneyanim"
+frame_progress = 0.31525946
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

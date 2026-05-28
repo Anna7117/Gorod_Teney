@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c6ocs3r2n2wta"]
+
+[ext_resource type="Script" uid="uid://iqnp2h8sre0w" path="res://Ловушки/lava.gd" id="1_b8jag"]
+[ext_resource type="Texture2D" uid="uid://cp03c4pxxvv6o" path="res://Ловушки/lava_strip8.png" id="2_w03gt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0la7"]
+atlas = ExtResource("2_w03gt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2s5f"]
+atlas = ExtResource("2_w03gt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_468nt"]
+atlas = ExtResource("2_w03gt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ti70"]
+atlas = ExtResource("2_w03gt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pg1sh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0la7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2s5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_468nt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ti70")
+}],
+"loop": true,
+"name": &"Анимация лавы",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n71pt"]
+size = Vector2(142, 11)
+
+[node name="лава" type="Node2D" unique_id=1041600776]
+script = ExtResource("1_b8jag")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=270164245]
+position = Vector2(45.124996, -1)
+scale = Vector2(4.492187, 4.1617646)
+sprite_frames = SubResource("SpriteFrames_pg1sh")
+animation = &"Анимация лавы"
+autoplay = "Анимация лавы"
+frame_progress = 0.41064423
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1789141032]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=539607127]
+position = Vector2(44, 4.5)
+shape = SubResource("RectangleShape2D_n71pt")
+
+[node name="Timer" type="Timer" parent="." unique_id=982551379]
+one_shot = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

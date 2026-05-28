@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://ga3cg5qub221"]
+
+[ext_resource type="Texture2D" uid="uid://630ed6qy406m" path="res://Ключ/key-game-pixelated-icon-design-vector-32743705.png" id="1_jxofj"]
+[ext_resource type="Script" uid="uid://0nlknbuice8v" path="res://Ключ/key.gd" id="1_lq8uf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lq8uf"]
+radius = 11.045361
+
+[sub_resource type="Animation" id="Animation_jxofj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_lq8uf"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.24, 0.5, 0.74, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.06981317007977318, 0.13962634015954636, 0.06981317007977318, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cpr7t"]
+_data = {
+&"RESET": SubResource("Animation_jxofj"),
+&"idle": SubResource("Animation_lq8uf")
+}
+
+[node name="Ключик" type="Area2D" unique_id=56918698]
+script = ExtResource("1_lq8uf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1333076976]
+position = Vector2(-1, 0)
+shape = SubResource("CircleShape2D_lq8uf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1882721362]
+position = Vector2(-0.9999999, -0.99999994)
+scale = Vector2(0.028891658, 0.028891657)
+texture = ExtResource("1_jxofj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1102299254]
+libraries/ = SubResource("AnimationLibrary_cpr7t")
+autoplay = &"idle"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bngdqcu8kw7h0"]
+
+[ext_resource type="Texture2D" uid="uid://of4an6seyigm" path="res://ФИНАЛ/финал игры.jpg" id="1_ge4rg"]
+[ext_resource type="Script" uid="uid://cr3lbj6elqdqr" path="res://ФИНАЛ/final_bg.gd" id="1_hceas"]
+[ext_resource type="Script" uid="uid://bmdkba8ts0upk" path="res://ФИНАЛ/final_text.gd" id="3_yeupx"]
+
+[node name="Финал" type="ParallaxBackground" unique_id=475126367]
+script = ExtResource("1_hceas")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=1284133887]
+motion_mirroring = Vector2(1344, 0)
+
+[node name="ФиналИгры" type="Sprite2D" parent="ParallaxLayer" unique_id=1977846996]
+position = Vector2(672, 311)
+texture = ExtResource("1_ge4rg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1012735357]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=333540813]
+offset_left = 12.0
+offset_top = 329.0
+offset_right = 1154.0
+offset_bottom = 636.0
+color = Color(0, 0, 0, 0.20392157)
+
+[node name="финалтекст" type="Label" parent="CanvasLayer" unique_id=620141578]
+offset_left = 33.0
+offset_top = 362.0
+offset_right = 1136.0
+offset_bottom = 624.0
+size_flags_horizontal = 4
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.98039216)
+theme_override_font_sizes/font_size = 36
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("3_yeupx")
+
+[node name="Выход" type="Button" parent="CanvasLayer" unique_id=499577870]
+visible = false
+offset_left = 939.0
+offset_top = 20.0
+offset_right = 1138.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 50
+text = "Выход
+"
+
+[connection signal="pressed" from="CanvasLayer/Выход" to="CanvasLayer/финалтекст" method="_on_выход_pressed"]

@@ -1,0 +1,202 @@
+[gd_scene format=3 uid="uid://c48jqm5ddehtl"]
+
+[ext_resource type="Texture2D" uid="uid://rgiexe3b3dmu" path="res://Моб/2 Owlet_Monster/Owlet_Monster_Idle_4.png" id="1_k71ls"]
+[ext_resource type="Script" uid="uid://cvaarjjb3ivy2" path="res://Моб/mob.gd" id="1_lo053"]
+[ext_resource type="Texture2D" uid="uid://b6hq6aetebohs" path="res://Моб/2 Owlet_Monster/Owlet_Monster_Death_8.png" id="2_moe3t"]
+[ext_resource type="Texture2D" uid="uid://cdj6ux2gj6b2p" path="res://Моб/2 Owlet_Monster/Owlet_Monster_Walk_6.png" id="3_moe3t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_re71u"]
+height = 24.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo053"]
+atlas = ExtResource("1_k71ls")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_byjt1"]
+atlas = ExtResource("1_k71ls")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82i04"]
+atlas = ExtResource("1_k71ls")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78u6e"]
+atlas = ExtResource("1_k71ls")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk0yi"]
+atlas = ExtResource("2_moe3t")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hos4m"]
+atlas = ExtResource("2_moe3t")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uewj8"]
+atlas = ExtResource("2_moe3t")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksi3y"]
+atlas = ExtResource("2_moe3t")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02j5a"]
+atlas = ExtResource("2_moe3t")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6lm8"]
+atlas = ExtResource("2_moe3t")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jaumq"]
+atlas = ExtResource("2_moe3t")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpg2h"]
+atlas = ExtResource("2_moe3t")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eamp6"]
+atlas = ExtResource("3_moe3t")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ert5"]
+atlas = ExtResource("3_moe3t")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kj56w"]
+atlas = ExtResource("3_moe3t")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqwnu"]
+atlas = ExtResource("3_moe3t")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1wu7"]
+atlas = ExtResource("3_moe3t")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06qlo"]
+atlas = ExtResource("3_moe3t")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bnuni"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lo053")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_byjt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82i04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78u6e")
+}],
+"loop": true,
+"name": &"на месте",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk0yi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hos4m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uewj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksi3y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02j5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6lm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jaumq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tpg2h")
+}],
+"loop": false,
+"name": &"смерть",
+"speed": 18.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eamp6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ert5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kj56w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqwnu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1wu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06qlo")
+}],
+"loop": true,
+"name": &"ходьба",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lo053"]
+radius = 117.00427
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo053"]
+size = Vector2(10, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_byjt1"]
+size = Vector2(22, 19)
+
+[node name="Моб" type="CharacterBody2D" unique_id=1539073581]
+script = ExtResource("1_lo053")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2072344167]
+shape = SubResource("CapsuleShape2D_re71u")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=442105055]
+position = Vector2(1.6249996, -1.6249996)
+scale = Vector2(0.83593756, 0.83593756)
+sprite_frames = SubResource("SpriteFrames_bnuni")
+animation = &"смерть"
+
+[node name="обнаружение" type="Area2D" parent="." unique_id=158223197]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="обнаружение" unique_id=1289799818]
+shape = SubResource("CircleShape2D_lo053")
+
+[node name="смерть" type="Area2D" parent="." unique_id=1749422131]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="смерть" unique_id=1950809162]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_lo053")
+
+[node name="смерть игрока" type="Area2D" parent="." unique_id=1595404682]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="смерть игрока" unique_id=1593198858]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_byjt1")
+
+[node name="Timer" type="Timer" parent="смерть игрока" unique_id=408350672]
+wait_time = 1.156
+one_shot = true
+
+[connection signal="body_entered" from="обнаружение" to="." method="_on_обнаружение_body_entered"]
+[connection signal="body_exited" from="обнаружение" to="." method="_on_обнаружение_body_exited"]
+[connection signal="body_entered" from="смерть" to="." method="_on_смерть_body_entered"]
+[connection signal="body_entered" from="смерть игрока" to="." method="_on_смерть_игрока_body_entered"]
+[connection signal="timeout" from="смерть игрока/Timer" to="." method="_on_timer_timeout"]

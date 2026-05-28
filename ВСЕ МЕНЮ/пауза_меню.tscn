@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://qtyjanr7327b"]
+
+[node name="ПаузаМеню" type="Control" unique_id=877920755]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1555342170]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -203.0
+offset_top = -233.0
+offset_right = 203.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=2043648447]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -54.0
+offset_right = 182.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Продолжить" type="Button" parent="Panel/VBoxContainer" unique_id=1217789371]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 27
+text = "Продолжить"
+
+[node name="Перезапустить" type="Button" parent="Panel/VBoxContainer" unique_id=293332082]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Перезапустить"
+
+[node name="Выйти" type="Button" parent="Panel/VBoxContainer" unique_id=651893669]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Выйти"
+
+[node name="Label" type="Label" parent="Panel" unique_id=1508956685]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -56.0
+offset_top = 27.0
+offset_right = 58.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 31
+text = "МЕНЮ"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bwp6uev4lkhl4"]
+
+[ext_resource type="Script" uid="uid://7wb3vqqvbywv" path="res://ВСЕ МЕНЮ/mode_menu.gd" id="1_50txi"]
+[ext_resource type="PackedScene" uid="uid://qfgxe4wdj6te" path="res://bg.tscn" id="2_h5p5k"]
+
+[node name="Меню режимов" type="Node2D" unique_id=1082774959]
+script = ExtResource("1_50txi")
+
+[node name="BG" parent="." unique_id=486406406 instance=ExtResource("2_h5p5k")]
+
+[node name="Легкий" type="Button" parent="." unique_id=1359781008]
+offset_left = 92.0
+offset_top = 365.0
+offset_right = 500.0
+offset_bottom = 474.0
+theme_override_font_sizes/font_size = 52
+text = "ЛЕГКИЙ
+(без врагов)"
+
+[node name="Сложный" type="Button" parent="." unique_id=397471016]
+offset_left = 650.0
+offset_top = 368.0
+offset_right = 1058.0
+offset_bottom = 477.0
+theme_override_font_sizes/font_size = 52
+text = "СЛОЖНЫЙ
+(с врагами)"
+
+[node name="Продолжить_1" type="Button" parent="." unique_id=1175742637]
+offset_left = 122.0
+offset_top = 523.0
+offset_right = 472.0
+offset_bottom = 574.0
+theme_override_font_sizes/font_size = 30
+text = "Продолжить игру"
+
+[node name="Продолжить_2" type="Button" parent="." unique_id=1170033798]
+offset_left = 679.0
+offset_top = 526.0
+offset_right = 1029.0
+offset_bottom = 577.0
+theme_override_font_sizes/font_size = 30
+text = "Продолжить игру"
+
+[node name="выбор режима" type="Label" parent="." unique_id=297634677]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 211.0
+offset_top = 67.0
+offset_right = 1036.0
+offset_bottom = 205.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.0010913926, 0.0021631045, 0.0054777977, 1)
+theme_override_font_sizes/font_size = 101
+text = "ВЫБЕРИ РЕЖИМ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Назад" type="Button" parent="." unique_id=1715533837]
+offset_left = 17.0
+offset_top = 20.0
+offset_right = 172.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 40
+text = "Назад"
+
+[connection signal="pressed" from="Легкий" to="." method="_on_легкий_pressed"]
+[connection signal="pressed" from="Сложный" to="." method="_on_сложный_pressed"]
+[connection signal="pressed" from="Продолжить_1" to="." method="_on_продолжить_1_pressed"]
+[connection signal="pressed" from="Продолжить_2" to="." method="_on_продолжить_2_pressed"]
+[connection signal="pressed" from="Назад" to="." method="_on_назад_pressed"]

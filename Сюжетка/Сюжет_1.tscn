@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://mr1ka3t2lwtn"]
+
+[ext_resource type="Script" uid="uid://eeegitohrpmc" path="res://Сюжетка/story_bg.gd" id="1_s4t75"]
+[ext_resource type="Texture2D" uid="uid://dc6p0yb3ec4t1" path="res://Сюжетка/темный город.jpg" id="2_5j78u"]
+[ext_resource type="Script" uid="uid://l7g5lxnmjekk" path="res://Сюжетка/story_text_1.gd" id="3_r3tti"]
+
+[node name="Сюжет_1" type="ParallaxBackground" unique_id=444541779]
+script = ExtResource("1_s4t75")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="." unique_id=1098287282]
+motion_mirroring = Vector2(1288.26, 0)
+
+[node name="ТемныйГород" type="Sprite2D" parent="ParallaxLayer" unique_id=1444100472]
+position = Vector2(674, 359)
+texture = ExtResource("2_5j78u")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2107253923]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=674968686]
+offset_left = -14.0
+offset_top = -12.0
+offset_right = 1159.0
+offset_bottom = 663.0
+color = Color(0, 0, 0, 0.15686275)
+
+[node name="Текст_сюжетки_1" type="Label" parent="CanvasLayer" unique_id=1152183019]
+offset_left = 31.0
+offset_top = 39.0
+offset_right = 846.0
+offset_bottom = 596.0
+theme_override_font_sizes/font_size = 25
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("3_r3tti")
+
+[node name="Продолжить" type="Button" parent="CanvasLayer" unique_id=1041498591]
+visible = false
+offset_left = 902.0
+offset_top = 22.0
+offset_right = 1119.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 32
+text = "Продолжить"
+
+[connection signal="pressed" from="CanvasLayer/Продолжить" to="CanvasLayer/Текст_сюжетки_1" method="_on_продолжить_pressed"]
